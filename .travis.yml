@@ -2,6 +2,8 @@ language: java
 os: osx
 osx_image: xcode9.3
 
-before_install: sudo safaridriver --enable
+before_install:
+  - sudo safaridriver --enable
+  - chmod a+x gradlew
 
-script: gradlew test
+script: ./gradlew test
