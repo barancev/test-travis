@@ -3,6 +3,8 @@ os: osx
 osx_image: xcode9.3
 
 before_install:
+  - sw_vers
+  - system_profiler SPApplicationsDataType | grep "Safari:" -A 8
   - sudo safaridriver --enable
   - chmod a+x gradlew
 
