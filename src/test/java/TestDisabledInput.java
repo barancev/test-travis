@@ -21,7 +21,7 @@ public class TestDisabledInput {
   void testDisabledInput() {
     driver.get("http://localhost:8080/test-travis");
     WebElement element = driver.findElement(By.id("disabled"));
-    assertThat(element.isEnabled()).isTrue();
+    assertThat(element.isEnabled()).isFalse();
   }
 
   @AfterEach
