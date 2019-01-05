@@ -1,18 +1,6 @@
-buildscript {
-  repositories {
-    jcenter()
-    mavenCentral()
-  }
-  dependencies {
-    classpath 'org.gretty:gretty:+'
-  }
-}
-
 apply plugin: 'java'
-apply plugin: 'org.gretty'
 
 repositories {
-  jcenter()
   mavenCentral()
 }
 
@@ -20,13 +8,8 @@ dependencies {
   testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
   testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
   testCompile 'org.assertj:assertj-core:3.11.1'
-  testCompile 'org.seleniumhq.selenium:selenium-java:3.14.0'
 }
 
 test {
   useJUnitPlatform()
-}
-
-gretty {
-  integrationTestTask = 'test'
 }
