@@ -9,6 +9,11 @@ before_install:
 
 script: ./gradlew test
 
+matrix:
+  include:
+    - env: CHROME=1 BUCK="test chrome-test"
+    - env: FIREFOX=1 BUCK="test firefox-test"
+
 notifications:
   webhooks:
     urls: https://vz8j8wm4oh.execute-api.us-east-1.amazonaws.com/dev/travisBuilds
