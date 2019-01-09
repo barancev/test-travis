@@ -19,7 +19,7 @@ public class DashboardNotifications implements BeforeTestExecutionCallback, Afte
   private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
   private static String notificationUrl = System.getenv("DASHBOARD_URL");
-  private static String jobId = System.getenv("JOB_ID");
+  private static String jobId = System.getenv("TRAVIS_JOB_ID");
   private static OkHttpClient client = new OkHttpClient();
   private static ObjectMapper mapper = new ObjectMapper();
 
