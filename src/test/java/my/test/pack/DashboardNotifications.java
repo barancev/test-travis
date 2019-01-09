@@ -1,3 +1,5 @@
+package my.test.pack;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
@@ -30,7 +32,7 @@ public class DashboardNotifications implements BeforeTestExecutionCallback, Afte
     if (notificationUrl != null && jobId != null) {
       Map<String, Object> map = new HashMap<>();
       map.put("name", context.getDisplayName());
-      map.put("testclass", context.getRequiredTestClass().getName());
+      map.put("testclass", context.getRequiredTestClass().getCanonicalName());
       map.put("testcase", context.getRequiredTestMethod().getName());
       map.put("job_id", jobId);
       long startedAt = System.currentTimeMillis();
@@ -51,7 +53,7 @@ public class DashboardNotifications implements BeforeTestExecutionCallback, Afte
     if (id != null && notificationUrl != null && jobId != null) {
       Map<String, Object> map = new HashMap<>();
       map.put("id", id);
-      map.put("testclass", context.getRequiredTestClass().getName());
+      map.put("testclass", context.getRequiredTestClass().getCanonicalName());
       map.put("testcase", context.getRequiredTestMethod().getName());
       map.put("job_id", jobId);
       long startedAt = getStore(context).remove(START_TIME, long.class);
@@ -64,7 +66,7 @@ public class DashboardNotifications implements BeforeTestExecutionCallback, Afte
       if (executionException.isPresent()) {
         Throwable ex = executionException.get();
         map.put("result", "failed");
-        map.put("exception", ex.getClass().getName());
+        map.put("exception", ex.getClass().getCanonicalName());
         map.put("message", ex.getMessage());
         map.put("stacktrace", stacktraceToString(ex));
       } else {
