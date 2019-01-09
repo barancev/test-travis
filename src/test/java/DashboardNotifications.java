@@ -71,7 +71,7 @@ public class DashboardNotifications implements BeforeTestExecutionCallback, Afte
         map.put("result", "passed");
       }
 
-      notify(map, notificationUrl);
+      notify(map, notificationUrl + "/" + id);
     }
   }
 
@@ -89,7 +89,11 @@ public class DashboardNotifications implements BeforeTestExecutionCallback, Afte
         .url(notificationUrl).post(body).build();
 
       try (Response response = client.newCall(request).execute()) {
-        return response.body().string();
+        if (response.isSuccessful()) {
+          return response.body().string().replace("\"", "");
+        } else {
+          return null;
+        }
       }
     } catch (Throwable t) {
       t.printStackTrace();
