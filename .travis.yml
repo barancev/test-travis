@@ -16,7 +16,8 @@ matrix:
 
 notifications:
   webhooks:
-    urls: https://vz8j8wm4oh.execute-api.us-east-1.amazonaws.com/dev/travisBuilds
+    urls:
+      - secure: "QMvYcPpusopSfUmvkqOOGX8pAxLTaGss7M4yA3ZxabDI4otMxqE3RcFLZ7LwbW3WlGcwvutQvP67M5cvuLyUzYnpcZ5JSForxCJvQO1KqU1JMt512rTL6RsiXKUjJgAxifFN505ZI39z6po3pEiXA5gaSz6hb1c+cdlNzvjiDQvwS1Dxhi/w8Fy5a6XGLhqeSZOugB4eTRUsV73IMt721bAtg22e6l9zBoiGf9NQCoYApTJhddXTftXka8LdfDem307ovWD6sWWRBd/lX1wsHKG1r7HeHrHGmioGRjt6Wtv2rLnwpVlXSmQvsXiddbA4TTWRSwkvRW1PNdBnwKwwrW4g5q82oRpsdwi80gfm/JQuu8aNJsJPGraUaNwDt6KAW9t1Fsj6be5ov6gJ3P77A2K8OSy17RDTJzCtbIIBId6hsRhVYObmdKzQvF8ChhdEuw8Q/gqJKxGLOFCDiOmJXKdC+4PJbmvts+v8CbKsS+Fd/wWNgLa4zuPm2GR6543C/Q53MnQwEkGMQbPU4wE+PIiNUzHTDiQuW/Cdo9uwio6KU/MFlsmmbmHW+oUCmHI4LXNswH/8PRt2vfktRb3JwmwblJnQAkBLQmt2swQUFDES2xWtGibkyxvG6xgQOVf1ZUJo6G87Dy8ADAwDEcrJHaBidwR3cwbHvgCYrvsgbfk="
     on_success: always # default: always
     on_failure: always # default: always
     on_start: always   # default: never
